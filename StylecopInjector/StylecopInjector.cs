@@ -22,11 +22,6 @@ namespace StylecopInjector
         public StylecopInjector(string folder)
         {
             this.Folder = folder;
-
-            if (!this.Folder.EndsWith("\\"))
-            {
-                this.Folder += "\\";
-            }
         }
 
         /// <summary>

@@ -6,6 +6,7 @@ namespace StylecopInjector
 {
     using System;
     using System.IO;
+    using SylecopInjector;
 
     /// <summary>
     /// Main program
@@ -43,9 +44,16 @@ namespace StylecopInjector
                 }
             }
 
+            if (!folder.EndsWith("\\"))
+            {
+                folder += "\\";
+            }
+
             var styleCopInjector = new StylecopInjector(folder);
             styleCopInjector.Inject();
 
+            var assemblyInfoUpdater = new AssemblyInfoUpdater(folder);
+            assemblyInfoUpdater.UpdateAssemblyInfo();
         }
     }
 }
